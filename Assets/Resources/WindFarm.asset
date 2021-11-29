@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 230ae089dd87dc0478b8764182759ebb, type: 3}
+  m_Name: WindFarm
+  m_EditorClassIdentifier: 
+  fmiVersion: 2.0
+  guid: 7b00630037003100310037003700330034002d0033003800340062002d0038003000620063002d0065006300350061002d003400390062006500310064003000340030003100370065007d00
+  modelName: WindFarm
+  coSimulation:
+    modelIdentifier: WindFarm
+  modelVariables:
+  - name: BladeLength
+    valueReference: 0
+    description: BladeLength
+    causality: input
+    variability: continuous
+    initial: 
+    type: 0
+    start: 0
+  - name: PowerOutput
+    valueReference: 1
+    description: PowerOutput
+    causality: output
+    variability: continuous
+    initial: calculated
+    type: 0
+    start: 
+  - name: RPM
+    valueReference: 2
+    description: RPM
+    causality: output
+    variability: continuous
+    initial: calculated
+    type: 0
+    start: 
+  - name: time
+    valueReference: 3
+    description: time
+    causality: independent
+    variability: continuous
+    initial: 
+    type: 0
+    start: 

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<fmiModelDescription
+  fmiVersion="2.0"
+  modelName="Wind_model"
+  guid="{eede144d-9756-5e0a-e59c-161332c60f3e}"
+  description=""
+  generationTool="Simulink (R2021b)"
+  version="1.5"
+  variableNamingConvention="structured"
+  generationDateAndTime="2021-11-01T17:17:00Z"
+  numberOfEventIndicators="0">
+
+<CoSimulation
+  modelIdentifier="Wind_model"
+  canBeInstantiatedOnlyOncePerProcess="true"
+  canNotUseMemoryManagementFunctions="true"
+  />
+<DefaultExperiment startTime="0" stopTime="100" stepSize="0.001"/>
+<VendorAnnotations>
+  <Tool name="Simulink">
+    <Simulink>
+      <ImportCompatibility requireRelease="all" requireMATLABOnPath="no" />
+      <SimulinkModelInterface>
+        <Inport dataType="double" portNumber="1" portName="WindSpeed"/>
+        <Inport dataType="double" portNumber="2" portName="BladeLength"/>
+        <Outport dataType="double" portNumber="1" portName="WindOutPut"/>
+        <Outport dataType="double" portNumber="2" portName="RPM"/>
+      </SimulinkModelInterface>
+    </Simulink>
+  </Tool>
+</VendorAnnotations>
+<ModelVariables>
+  <ScalarVariable name="WindSpeed" valueReference="0" description="WindSpeed" causality="input" variability="continuous" >
+    <Real start="0"  />
+  </ScalarVariable> <!-- index="1" -->
+  <ScalarVariable name="BladeLength" valueReference="1" description="BladeLength" causality="input" variability="continuous" >
+    <Real start="0"  />
+  </ScalarVariable> <!-- index="2" -->
+  <ScalarVariable name="WindOutPut" valueReference="2" description="WindOutPut" causality="output" variability="continuous" initial="calculated">
+    <Real  />
+  </ScalarVariable> <!-- index="3" -->
+  <ScalarVariable name="RPM" valueReference="3" description="RPM" causality="output" variability="continuous" initial="calculated">
+    <Real  />
+  </ScalarVariable> <!-- index="4" -->
+  <ScalarVariable name="time" valueReference="4" description="time" causality="independent" variability="continuous" >
+    <Real  />
+  </ScalarVariable> <!-- index="5" -->
+</ModelVariables>
+<ModelStructure>
+  <Outputs>
+    <Unknown index="3" />
+    <Unknown index="4" />
+  </Outputs>
+  <InitialUnknowns>
+    <Unknown index="3" />
+    <Unknown index="4" />
+  </InitialUnknowns>
+</ModelStructure>
+</fmiModelDescription>
+
