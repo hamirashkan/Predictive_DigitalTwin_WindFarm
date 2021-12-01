@@ -45,7 +45,7 @@ public class Sample : MonoBehaviour {
     void Update () 
     {
         Figuretext.text = (TurbineSetting.Title_GUI + "\n" + (TurbineSetting.WindOutputValue / 100000).ToString("0.00" + " MW") + "\n" + TurbineSetting.RPMValue.ToString("0.00" + " RPM") 
-            + "\n" + (TurbineSetting.WindDirectionValue).ToString("0.0" + " Degree")); 
+            + "\n" + (TurbineSetting.WindDirectionValue).ToString("0.0" + " Degree") + "\n" + (TurbineSetting.BladeLengthValue).ToString("0" + " Meter")); 
 
     }
 

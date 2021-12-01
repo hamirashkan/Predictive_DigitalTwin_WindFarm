@@ -538,7 +538,6 @@ GameObject:
   - component: {fileID: 6747296837719353168}
   - component: {fileID: 5201819862102599912}
   - component: {fileID: 4111055932326915583}
-  - component: {fileID: 3412635024569954521}
   m_Layer: 8
   m_Name: Down1
   m_TagString: Untagged
@@ -635,19 +634,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlightMat: {fileID: 2100000, guid: c6a63b8d52a8a9144bcbb6064894c245, type: 2}
   DefaultMat: {fileID: 5612524795990701303, guid: 565398cdfbbcac949a2251465ee5906a, type: 3}
---- !u!65 &3412635024569954521
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2357423997561614741}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 5.3190002, y: 17.4433, z: 5.3190002}
-  m_Center: {x: -11.988301, y: -1.24805, z: -58.6642}
 --- !u!1 &2391562896590283077
 GameObject:
   m_ObjectHideFlags: 0
@@ -950,7 +936,6 @@ GameObject:
   - component: {fileID: 2148943378832670811}
   - component: {fileID: 9064798395556986035}
   - component: {fileID: 3701750579982561288}
-  - component: {fileID: 8990258042725915612}
   m_Layer: 8
   m_Name: Gearbox3
   m_TagString: Untagged
@@ -1035,19 +1020,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlightMat: {fileID: 2100000, guid: c6a63b8d52a8a9144bcbb6064894c245, type: 2}
   DefaultMat: {fileID: 5612524795990701303, guid: 565398cdfbbcac949a2251465ee5906a, type: 3}
---- !u!65 &8990258042725915612
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2996205551693463212}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 4.1616, y: 4.519001, z: 6.513199}
-  m_Center: {x: -11.9883, y: 38.4802, z: -58.200596}
 --- !u!1 &3529360631751541890
 GameObject:
   m_ObjectHideFlags: 0
@@ -1255,7 +1227,6 @@ GameObject:
   - component: {fileID: 6302216672231480110}
   - component: {fileID: 4728099781243263522}
   - component: {fileID: 4916870690864181987}
-  - component: {fileID: 4637157024966231508}
   m_Layer: 8
   m_Name: Down2
   m_TagString: Untagged
@@ -1352,19 +1323,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlightMat: {fileID: 2100000, guid: c6a63b8d52a8a9144bcbb6064894c245, type: 2}
   DefaultMat: {fileID: 5612524795990701303, guid: 565398cdfbbcac949a2251465ee5906a, type: 3}
---- !u!65 &4637157024966231508
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3820519658153665942}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 5.3190002, y: 17.4433, z: 5.3190002}
-  m_Center: {x: -11.988301, y: -1.2480423, z: -58.6642}
 --- !u!1 &4087064767361255273
 GameObject:
   m_ObjectHideFlags: 0
@@ -2075,7 +2033,6 @@ GameObject:
   - component: {fileID: 495334298432923063}
   - component: {fileID: 6726418945739994784}
   - component: {fileID: 2656458145867375926}
-  - component: {fileID: 2850466291829204166}
   m_Layer: 8
   m_Name: Down3
   m_TagString: Untagged
@@ -2172,19 +2129,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlightMat: {fileID: 2100000, guid: c6a63b8d52a8a9144bcbb6064894c245, type: 2}
   DefaultMat: {fileID: 5612524795990701303, guid: 565398cdfbbcac949a2251465ee5906a, type: 3}
---- !u!65 &2850466291829204166
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5284747428813936709}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 5.3190002, y: 17.4433, z: 5.3190002}
-  m_Center: {x: -11.988301, y: -1.2480423, z: -58.6642}
 --- !u!1 &5319322540446648148
 GameObject:
   m_ObjectHideFlags: 0
@@ -2653,7 +2597,6 @@ GameObject:
   - component: {fileID: 2645407652719675636}
   - component: {fileID: 7251631884314901124}
   - component: {fileID: 5123960738435676277}
-  - component: {fileID: 4900554576358852567}
   m_Layer: 8
   m_Name: Yawpart
   m_TagString: Untagged
@@ -2738,19 +2681,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlightMat: {fileID: 2100000, guid: c6a63b8d52a8a9144bcbb6064894c245, type: 2}
   DefaultMat: {fileID: 5612524795990701303, guid: 565398cdfbbcac949a2251465ee5906a, type: 3}
---- !u!65 &4900554576358852567
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6397451933026663415}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 2.8244, y: 2.0055008, z: 2.8244019}
-  m_Center: {x: -11.9883, y: 36.01355, z: -58.6642}
 --- !u!1 &6854268862802050659
 GameObject:
   m_ObjectHideFlags: 0
@@ -2886,7 +2816,6 @@ GameObject:
   - component: {fileID: 4692099565495560460}
   - component: {fileID: 8291962786590791278}
   - component: {fileID: 7650427940562945310}
-  - component: {fileID: 6852635637110772960}
   m_Layer: 8
   m_Name: Up
   m_TagString: Untagged
@@ -2983,19 +2912,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlightMat: {fileID: 2100000, guid: c6a63b8d52a8a9144bcbb6064894c245, type: 2}
   DefaultMat: {fileID: 5612524795990701303, guid: 565398cdfbbcac949a2251465ee5906a, type: 3}
---- !u!65 &6852635637110772960
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7110657116539328208}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 5.2539997, y: 27.537199, z: 5.253998}
-  m_Center: {x: -11.988301, y: 21.242199, z: -58.6642}
 --- !u!1 &7293110229483705082
 GameObject:
   m_ObjectHideFlags: 0
@@ -3700,7 +3616,6 @@ GameObject:
   - component: {fileID: 6018356940169723360}
   - component: {fileID: 3323608827175749180}
   - component: {fileID: 5909535186747720307}
-  - component: {fileID: 2859654745355016213}
   m_Layer: 8
   m_Name: Gearbox2
   m_TagString: Untagged
@@ -3785,19 +3700,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlightMat: {fileID: 2100000, guid: c6a63b8d52a8a9144bcbb6064894c245, type: 2}
   DefaultMat: {fileID: 5612524795990701303, guid: 565398cdfbbcac949a2251465ee5906a, type: 3}
---- !u!65 &2859654745355016213
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8724014958745681171}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 4.519, y: 1.7292976, z: 5.582699}
-  m_Center: {x: -11.9883, y: 38.480247, z: -57.735348}
 --- !u!1 &8807670432485852719
 GameObject:
   m_ObjectHideFlags: 0
@@ -3811,7 +3713,6 @@ GameObject:
   - component: {fileID: 6936406099763329390}
   - component: {fileID: 65777545518532089}
   - component: {fileID: 8783323626170977226}
-  - component: {fileID: 4836304760213484997}
   m_Layer: 8
   m_Name: Down4
   m_TagString: Untagged
@@ -3908,19 +3809,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlightMat: {fileID: 2100000, guid: c6a63b8d52a8a9144bcbb6064894c245, type: 2}
   DefaultMat: {fileID: 5612524795990701303, guid: 565398cdfbbcac949a2251465ee5906a, type: 3}
---- !u!65 &4836304760213484997
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8807670432485852719}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 5.3190002, y: 17.4433, z: 5.3190002}
-  m_Center: {x: -11.988301, y: -1.2480423, z: -58.6642}
 --- !u!1 &9095144396975021956
 GameObject:
   m_ObjectHideFlags: 0
@@ -3933,7 +3821,6 @@ GameObject:
   - component: {fileID: 6000316480192641027}
   - component: {fileID: 947000926617746388}
   - component: {fileID: 7590867668160326901}
-  - component: {fileID: 6803560066572933430}
   m_Layer: 8
   m_Name: Gearbox1
   m_TagString: Untagged
@@ -4018,19 +3905,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlightMat: {fileID: 2100000, guid: c6a63b8d52a8a9144bcbb6064894c245, type: 2}
   DefaultMat: {fileID: 5612524795990701303, guid: 565398cdfbbcac949a2251465ee5906a, type: 3}
---- !u!65 &6803560066572933430
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9095144396975021956}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 4.1752005, y: 3.7974014, z: 1.8609009}
-  m_Center: {x: -11.9883, y: 38.4803, z: -61.457146}
 --- !u!1001 &6417834168850718431
 PrefabInstance:
   m_ObjectHideFlags: 0

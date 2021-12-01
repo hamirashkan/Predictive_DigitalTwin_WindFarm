@@ -171,7 +171,7 @@ public class DragDropObjects : MonoBehaviour
 
                 currentPlaceableObject = Instantiate(placeableObjectPrefabs[0]);
                 //currentPlaceableObject.GetComponent<Collider>().enabled = true;
-                currentPlaceableObject.tag = "prefab";
+                currentPlaceableObject.tag = "Clone";
                 //currentPlaceableObject.layer = 8;
                 currentPlaceableObject.name = "WindTurbine" + "_" + DTtoGameObjectName(DateTime.Now);
                 currentPlaceableObject.transform.parent = GameObject.Find("WindFarm").transform;
@@ -198,7 +198,7 @@ public class DragDropObjects : MonoBehaviour
             currentPlaceableObject = Instantiate(placeableObjectPrefabs[1]);
             currentPlaceableObject.tag = "Clone";
             currentPlaceableObject.name = "OilRig" + "_" + DTtoGameObjectName(DateTime.Now);
-            currentPlaceableObject.transform.parent = GameObject.Find("WindFarm").transform;
+            currentPlaceableObject.transform.parent = GameObject.Find("OilRigSite").transform;
         }
     }
 

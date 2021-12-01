@@ -14,7 +14,7 @@ public class OPC_UA : MonoBehaviour
     private Session session;
 
     bool connected = false;
-    public static float Power_OPCUA, WindSpeed_OPCUA, Blade_OPCUA, WindDir_OPCUA;
+    public static float Power_OPCUA, WindSpeed_OPCUA, Blade_OPCUA, WindDir_OPCUA, Feedback_OPCUA, Command_OPCUA;
     ApplicationConfiguration config;
 
     public string windspeed_wr;
@@ -24,6 +24,9 @@ public class OPC_UA : MonoBehaviour
     public string WindDir_rd;
     public string creator_rd;
     public string Blade_rd;
+    public string Feedback;
+    public string Command;
+
 
     //public Button WriteData;
     public Button OPC_Connection;
@@ -60,6 +63,8 @@ public class OPC_UA : MonoBehaviour
                 WindDir_OPCUA = float.Parse(WindDir_rd);
                 WindSpeed_OPCUA = float.Parse(windspeed_rd);
                 Blade_OPCUA = float.Parse(Blade_rd);
+                Feedback_OPCUA = float.Parse(Feedback);
+                Command_OPCUA = float.Parse(Command);
                 WriteDataToOPC();
             }
             timecount++;
@@ -268,6 +273,29 @@ public class OPC_UA : MonoBehaviour
 
             subscription.AddItem(doubleMonitoredItemBlade);
 
+
+
+            MonitoredItem doubleMonitoredItemFeedback = new MonitoredItem(subscription.DefaultItem);
+            // Double Node - Objects\CTT\NTNU_ICT_WindFarm_Demo\WindFarm_Windspeed
+            doubleMonitoredItemFeedback.StartNodeId = new NodeId("ns=2;s=WindFarm_Feedback");
+            doubleMonitoredItemFeedback.AttributeId = Attributes.Value;
+            doubleMonitoredItemFeedback.DisplayName = "Wind Farm Feedback";
+            doubleMonitoredItemFeedback.SamplingInterval = 1000;
+            doubleMonitoredItemFeedback.Notification += OnMonitoredItemNotification;
+
+            subscription.AddItem(doubleMonitoredItemFeedback);
+
+
+            MonitoredItem doubleMonitoredItemCommand = new MonitoredItem(subscription.DefaultItem);
+            // Double Node - Objects\CTT\NTNU_ICT_WindFarm_Demo\WindFarm_Windspeed
+            doubleMonitoredItemCommand.StartNodeId = new NodeId("ns=2;s=WindFarm_Command");
+            doubleMonitoredItemCommand.AttributeId = Attributes.Value;
+            doubleMonitoredItemCommand.DisplayName = "Wind Farm Command";
+            doubleMonitoredItemCommand.SamplingInterval = 1000;
+            doubleMonitoredItemCommand.Notification += OnMonitoredItemNotification;
+
+            subscription.AddItem(doubleMonitoredItemCommand);
+
             // Create the monitored items on Server side
             subscription.ApplyChanges();
             flag = true;
@@ -375,6 +403,11 @@ public class OPC_UA : MonoBehaviour
                 Blade_rd = notification.Value.ToString();
             //displayer.lblWindPower.Text = notification.Value.ToString();
             //
+            else if (monitoredItem.DisplayName == "Wind Farm Feedback")
+                Feedback = notification.Value.ToString();
+
+            else if (monitoredItem.DisplayName == "Wind Farm Command")
+                Command = notification.Value.ToString();
         }
         catch (Exception ex)
         {

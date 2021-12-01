@@ -14,7 +14,7 @@ public class TurbineSetting : MonoBehaviour
     public float BladeLength, HubLength;
     [Range(1.0f, 100.0f)]
     public float WakeLoss, TimeOut, MechLoss, ElecLoss, Cp;
-    private float windout, rpm, Powerrate,RPMrate, angle;
+    private float windout, rpm, Powerrate,RPMrate, angle, meter;
     private int clickNumber;
     public float WindOutPut, RPM, windDirection;
     private TextMeshPro BarText;
@@ -75,7 +75,7 @@ public class TurbineSetting : MonoBehaviour
         RPM = RpmAnalogFormat(rpm);
         WindOutPut = PowerAnalogFormat(windout);
         windDirection = WindDirectAnalogFormat(WindTransform.transform.eulerAngles.y);
-        BladeLengthValue = BladeLength;
+        BladeLengthValue = BladeAnalogFormat(BladeLength);
         Title_GUI = "Unity";
         yourbutton.GetComponent<Image>().color = new Color32(247, 139, 106, 255);
     }
@@ -87,7 +87,7 @@ public class TurbineSetting : MonoBehaviour
         windDirection = WindDirectAnalogFormat(WindTransform.transform.eulerAngles.y);
         Title_GUI = "FMU";
         yourbutton.GetComponent<Image>().color = new Color32(247, 219, 106, 255);
-        BladeLengthValue = WindFarmFMU.Blade_FMU;
+        BladeLengthValue = BladeAnalogFormat(WindFarmFMU.Blade_FMU);
     }
     void OPCUA_Data()
     {
@@ -99,18 +99,18 @@ public class TurbineSetting : MonoBehaviour
         windDirection = WindDirectAnalogFormat(OPC_UA.WindDir_OPCUA);
         Title_GUI = "OPC_UA";
         yourbutton.GetComponent<Image>().color = new Color32(90, 219, 198, 255);
-        BladeLengthValue = OPC_UA.Blade_OPCUA;
+        BladeLengthValue = BladeAnalogFormat(OPC_UA.Blade_OPCUA);
     }
 
     float PowerAnalogFormat(float power)
     {
         if (Powerrate < power)
         {
-            Powerrate += 70000f * Time.deltaTime;
+            Powerrate += 100000f * Time.deltaTime;
         }
         if (Powerrate > power)
         {
-            Powerrate -= 70000f * Time.deltaTime;
+            Powerrate -= 100000f * Time.deltaTime;
         }
         return Powerrate;
     }
@@ -141,6 +141,19 @@ public class TurbineSetting : MonoBehaviour
         }
         return angle;
     }
+    float BladeAnalogFormat(float BladeLength)
+    {
+        if (meter < BladeLength)
+        {
+            meter += 10f * Time.deltaTime;
+        }
+        if (meter > BladeLength)
+        {
+            meter -= 10f * Time.deltaTime;
+        }
+        return meter;
+    }
+
 
     public void toggle()
     {

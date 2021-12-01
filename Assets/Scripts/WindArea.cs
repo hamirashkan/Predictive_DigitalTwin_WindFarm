@@ -18,6 +18,7 @@ public class WindArea : MonoBehaviour
     public TMP_InputField InputWS, InputWD;
     public ParticleSystem WindParticle;
     public WindZone zone;
+    public TMP_Text servotext, commandtxt;
 
 
     void Start()
@@ -34,6 +35,8 @@ public class WindArea : MonoBehaviour
     [System.Obsolete]
     void Update()
     {
+        servotext.text = ("Servo Motor Position: "+OPC_UA.Feedback_OPCUA.ToString());
+        commandtxt.text = ("Giving command " + OPC_UA.Command_OPCUA.ToString());
         OceanMaterial.SetFloat("_Wave_Strength", WindSpeed * 0.15f);
         WindSpeedValue = WindSpeed;
         var trail = WindParticle.trails;
