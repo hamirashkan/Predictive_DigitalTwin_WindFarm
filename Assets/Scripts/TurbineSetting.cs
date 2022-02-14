@@ -35,7 +35,7 @@ public class TurbineSetting : MonoBehaviour
         HubObj = this.transform.Find("Tower");
         BladeObj = this.YawObj.Find("Blades");
         WindTransform = GameObject.FindGameObjectWithTag("WindArea");
-        BladeLength = 25; HubLength = 1.0f; Cp = 4;
+        BladeLength = 52; HubLength = 1.0f; Cp = 4;
         yourbutton = GameObject.Find("DataSwap").GetComponent<Button>();
         Button btn = yourbutton.GetComponent<Button>();
         btn.onClick.AddListener(clicknumber);
@@ -55,7 +55,7 @@ public class TurbineSetting : MonoBehaviour
         this.transform.eulerAngles = new Vector3(0, windDirection, 0);
         YawObj.localScale = new Vector3((1+ BladeLengthValue * 0.02f), (1+ BladeLengthValue * 0.02f), (1+ BladeLengthValue * 0.01f));
         HubObj.localScale = new Vector3(1, HubLength, 1);
-        BladeObj.Rotate(new Vector3(0, 0, (float)(RPM * 6.0f)) * Time.deltaTime);
+        BladeObj.Rotate(new Vector3(0, 0, (float)(RPM * 5.0f)) * Time.deltaTime);
         //Pitch.transform.eulerAngles = new Vector3(0, PitchAngle, 0);
         //transform.Rotate(Vector3.forward, (RPM * 6f) * Time.deltaTime);
     }
@@ -209,19 +209,19 @@ public class TurbineSetting : MonoBehaviour
     {
         var windzone_dist = GameObject.Find("Particles").transform.position;
         var this_pos = this.transform.position;
-        var diff = ((this_pos - windzone_dist).magnitude) / 2;
+        var dist = Vector3.Distance(this_pos, windzone_dist)/6;
         //Debug.Log("Name: " + this.transform.name + "Distance" + diff);
-
+        WakeLoss = dist;
         var rho = 1.23f;  //Air density (kg / m3)
         // Power Coefficient the real world limit is well below the Betz Limit with values of 0.35 - 0.45 common even in the best designed wind turbines
         var Radius = BladeLength;   //Blade Length(m)
-        var Miu = (1 - ((diff) * 0.01)) * (1 - (WakeLoss * 0.01)) * (1 - (MechLoss * 0.01)) * (1 - (TimeOut * 0.01)) * (1 - (ElecLoss * 0.01)) * (Cp * 0.01); //Real efficiency
+        var Miu =(1 - (WakeLoss * 0.01)) * (1 - (MechLoss * 0.01)) * (1 - (TimeOut * 0.01)) * (1 - (ElecLoss * 0.01)) * (Cp * 0.01); //Real efficiency (1 - ((diff) * 0.01)) * 
         var SweptArea = (Math.PI * Math.Pow(Radius, 2));  //Swept Are (m2)
         var WindPower = (0.5f * rho * SweptArea * Math.Pow(WindVelocity, 3));   // PowerWind = 1/2 * rho * A * V**3 * Cp //(Wind Speed m/s) 
         windout = (float)(Miu * WindPower);
         var RotorDiameter = BladeLength * 2; //Rotor Diameter
         var TSR = 8;  //Tip Speed Ratio
-        rpm = (float)(1 - ((diff) * 0.005)) * (float)((60 * WindVelocity * TSR) / (Math.PI * RotorDiameter));
+        rpm = (float)(1 - ((dist) * 0.01)) * (float)((60 * WindVelocity * TSR) / (Math.PI * RotorDiameter));
         //PowerText.text = ("Wind Power: " + (WindOutPut / 1000000).ToString("0.00") + " MW");
         //RPMText.text = ("Rotational Speed: " + RPM.ToString("0.00") + " rpm");
     }

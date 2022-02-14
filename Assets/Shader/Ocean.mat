@@ -70,7 +70,7 @@ Material:
     - _Smoothness: 0.7
     - _Wave_Scale: 1.7
     - _Wave_Speed: 35
-    - _Wave_Strength: 0.75
+    - _Wave_Strength: 1.8000001
     - _Wave_Tile: 1.69
     m_Colors:
     - Color_7e3431c785834685aabf6b3883542669: {r: 0, g: 0.27036628, b: 0.3962264, a: 0}
