@@ -61,7 +61,8 @@ public class Sample : MonoBehaviour {
         //    avgOutput = TotalOutPut / i;
         //}
 
-        m_DataDiagram.InputPoint(lineList[0], new Vector2(1, TurbineSetting.WindOutputValue / 100000));// avgOutput / 1000000));//WindFarmFMU.RPM_FMU));
+       m_DataDiagram.InputPoint(lineList[0], new Vector2(1, TurbineSetting.WindOutputValue / 100000));// avgOutput / 1000000));//WindFarmFMU.RPM_FMU));
+       //m_DataDiagram.InputPoint(lineList[0], new Vector2(1, CSVReader.csvValue));// avgOutput / 1000000));//WindFarmFMU.RPM_FMU));
     }
 
 

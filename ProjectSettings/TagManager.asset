@@ -13,6 +13,9 @@ TagManager:
   - Indicator
   - BladeTag
   - prefab
+  - 3DGauge
+  - TurbineClone
+  - OilRigClone
   layers:
   - Default
   - TransparentFX

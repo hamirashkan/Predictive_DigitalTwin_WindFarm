@@ -14,18 +14,11 @@ public class OPC_UA : MonoBehaviour
     private Session session;
 
     bool connected = false;
-    public static float Power_OPCUA, WindSpeed_OPCUA, Blade_OPCUA, WindDir_OPCUA, Feedback_OPCUA, Command_OPCUA;
+    public static float Power_OPCUA, WindSpeed_OPCUA, Blade_OPCUA, WindDir_OPCUA, Feedback_OPCUA, Command_OPCUA, WindTemp_OPCUA;
     ApplicationConfiguration config;
 
-    public string windspeed_wr;
-    public string WindDir_wr;
-    public string Blade_wr;
-    public string windspeed_rd;
-    public string WindDir_rd;
-    public string creator_rd;
-    public string Blade_rd;
-    public string Feedback;
-    public string Command;
+    public string windspeed_wr, WindTemp_rd, WindDir_wr, Blade_wr, windspeed_rd, WindDir_rd, creator_rd, Blade_rd, Feedback, Command;
+
 
 
     //public Button WriteData;
@@ -46,7 +39,8 @@ public class OPC_UA : MonoBehaviour
     public void Start()
     {
         flag = false;
-        IPInputData.text = "10.24.91.169";
+        //IPInputData.text = "10.24.91.169";
+        IPInputData.text = "192.168.0.145";
         //WriteData.onClick.AddListener(WriteDataToOPC);
     }
 
@@ -65,6 +59,8 @@ public class OPC_UA : MonoBehaviour
                 Blade_OPCUA = float.Parse(Blade_rd);
                 Feedback_OPCUA = float.Parse(Feedback);
                 Command_OPCUA = float.Parse(Command);
+                WindTemp_OPCUA = float.Parse(WindTemp_rd);
+
                 WriteDataToOPC();
             }
             timecount++;
@@ -108,7 +104,7 @@ public class OPC_UA : MonoBehaviour
         //OPCStart();
         _ = Init_OPC();
         Connect_OPC();
-        OPC_Connection.GetComponent<Image>().color = new Color32(87, 201, 98, 255);
+        System.Diagnostics.Process.Start(Application.dataPath + "/CSV/Plot/" + "Nodered.bat");
     }
 
     public async Task Init_OPC()
@@ -296,14 +292,28 @@ public class OPC_UA : MonoBehaviour
 
             subscription.AddItem(doubleMonitoredItemCommand);
 
+
+
+            MonitoredItem doubleMonitoredItemWTemp = new MonitoredItem(subscription.DefaultItem);
+            // Double Node - Objects\CTT\NTNU_ICT_WindFarm_Demo\WindFarm_Windspeed
+            doubleMonitoredItemWTemp.StartNodeId = new NodeId("ns=2;s=WindFarm_WindTemp");
+            doubleMonitoredItemWTemp.AttributeId = Attributes.Value;
+            doubleMonitoredItemWTemp.DisplayName = "Wind Farm WindTemp";
+            doubleMonitoredItemWTemp.SamplingInterval = 1000;
+            doubleMonitoredItemWTemp.Notification += OnMonitoredItemNotification;
+
+            subscription.AddItem(doubleMonitoredItemWTemp);
+
             // Create the monitored items on Server side
             subscription.ApplyChanges();
             flag = true;
             Debug.Log("Finished client initialization");
+            OPC_Connection.GetComponent<Image>().color = new Color32(87, 201, 98, 255);
         }
         else
         {
             Debug.Log("Could not connect to server!");
+            OPC_Connection.GetComponent<Image>().color = new Color32(255, 0, 0, 255);
         }
     }
 
@@ -408,6 +418,9 @@ public class OPC_UA : MonoBehaviour
 
             else if (monitoredItem.DisplayName == "Wind Farm Command")
                 Command = notification.Value.ToString();
+
+            else if (monitoredItem.DisplayName == "Wind Farm WindTemp")
+                WindTemp_rd = notification.Value.ToString();
         }
         catch (Exception ex)
         {

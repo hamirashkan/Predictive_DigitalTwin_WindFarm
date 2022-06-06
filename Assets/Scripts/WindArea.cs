@@ -23,7 +23,8 @@ public class WindArea : MonoBehaviour
 
     void Start()
     {
-        WindSpeed = 5;
+        WindSpeed = 15;
+        WindDirect = 0;
         //var tempRotation = Quaternion.identity;
         //var tempVector = Vector3.zero;
         //tempVector = tempRotation.eulerAngles;

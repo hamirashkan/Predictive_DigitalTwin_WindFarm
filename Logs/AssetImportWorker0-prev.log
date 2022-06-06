@@ -1,0 +1,165 @@
+Using pre-set license
+Built from '2020.3/staging' branch; Version is '2020.3.5f1 (8095aa901b9b) revision 8426922'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10 Home; OS build 19044.1706; Version 2009; 64bit' Language: 'en' Physical Memory: 7988 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+ COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2020.3.5f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+C:/Users/Amirashkan/Desktop/Unity/Shared Project/Backup/02142022/DT_WindFarm_MasterThesis
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+50318
+Successfully changed project path to: C:/Users/Amirashkan/Desktop/Unity/Shared Project/Backup/02142022/DT_WindFarm_MasterThesis
+C:/Users/Amirashkan/Desktop/Unity/Shared Project/Backup/02142022/DT_WindFarm_MasterThesis
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 74.37 ms, found 3 plugins.
+Preloading 2 native plugins for Editor in 2.10 ms.
+Initialize engine version: 2020.3.5f1 (8095aa901b9b)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.5f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/Amirashkan/Desktop/Unity/Shared Project/Backup/02142022/DT_WindFarm_MasterThesis/Assets
+GfxDevice: creating device client; threaded=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 1660 Ti with Max-Q Design (ID=0x2191)
+    Vendor:   
+    VRAM:     5991 MB
+    Driver:   30.0.15.1169
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.5f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.5f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.5f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56004
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.5f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.5f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.003798 seconds.
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 52.92 ms, found 3 plugins.
+Preloading 2 native plugins for Editor in 0.11 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  3.125 seconds
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.081948 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 56.01 ms, found 3 plugins.
+Preloading 2 native plugins for Editor in 0.14 ms.
+System.NullReferenceException: Object reference not set to an instance of an object
+  at Vuforia.EditorClasses.ExtensionTypeProvider.GetVuforiaPackageAbsPath () [0x0004a] in <67f168408fbf4fce9c04342c093e9fe7>:0 
+  at Vuforia.EditorClasses.ExtensionTypeProvider.IsPackageManager () [0x00000] in <67f168408fbf4fce9c04342c093e9fe7>:0 
+  at Vuforia.EditorClasses.ExtensionTypeProvider.ResolvePluginType () [0x00009] in <67f168408fbf4fce9c04342c093e9fe7>:0 
+  at Vuforia.EditorClasses.ExtensionTypeProvider.GetPluginType () [0x0000c] in <67f168408fbf4fce9c04342c093e9fe7>:0 
+  at Vuforia.EditorClasses.VuforiaUtilities.IsVuforiaEnabledInPlayerSettings () [0x00000] in <67f168408fbf4fce9c04342c093e9fe7>:0 
+  at VuforiaEnabledObserver..cctor () [0x00000] in <67f168408fbf4fce9c04342c093e9fe7>:0 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+System.NullReferenceException: Object reference not set to an instance of an object
+  at Vuforia.EditorClasses.ExtensionTypeProvider.GetVuforiaPackageAbsPath () [0x0004a] in <67f168408fbf4fce9c04342c093e9fe7>:0 
+  at Vuforia.EditorClasses.ExtensionTypeProvider.IsPackageManager () [0x00000] in <67f168408fbf4fce9c04342c093e9fe7>:0 
+  at Vuforia.EditorClasses.ExtensionTypeProvider.ResolvePluginType () [0x00009] in <67f168408fbf4fce9c04342c093e9fe7>:0 
+  at Vuforia.EditorClasses.ExtensionTypeProvider.GetPluginType () [0x0000c] in <67f168408fbf4fce9c04342c093e9fe7>:0 
+  at Vuforia.EditorClasses.VuforiaUtilities.IsVuforiaEnabledInPlayerSettings () [0x00000] in <67f168408fbf4fce9c04342c093e9fe7>:0 
+  at Vuforia.EditorClasses.InitializeOnLoadVuforiaTaskRunner..cctor () [0x00015] in <67f168408fbf4fce9c04342c093e9fe7>:0 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+Mono: successfully reloaded assembly
+- Completed reload, in  1.379 seconds
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
+Refreshing native plugins compatible for Editor in 12.38 ms, found 3 plugins.
+Preloading 2 native plugins for Editor in 1.49 ms.
+Unloading 2643 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 141.2 MB.
+System memory in use after: 138.7 MB.
+
+Unloading 134 unused Assets to reduce memory usage. Loaded Objects now: 3275.
+Total: 19.319900 ms (FindLiveObjects: 10.512900 ms CreateObjectMapping: 0.426300 ms MarkObjects: 3.461700 ms  DeleteObjects: 4.872500 ms)
+
+========================================================================
+Received Import Request.
+  path: Assets/Prefab/WindMillMain.prefab
+  artifactKey: Guid(49e728eecbc7fc3409d662034202d861) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/WindMillMain.prefab using Guid(49e728eecbc7fc3409d662034202d861) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2139a13224d87ac0a0c0e1bf9bdb932f') in 0.444961 seconds
+  Import took 0.468784 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000429 seconds.
+  path: Assets/Prefab/ARCamera.prefab
+  artifactKey: Guid(fd1441fad2e96cd45bee11a908d3586f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/ARCamera.prefab using Guid(fd1441fad2e96cd45bee11a908d3586f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '73474487e42a720fafe0fd6f8ab565e8') in 0.169406 seconds
+  Import took 0.179029 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.522553 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 1.01 ms, found 3 plugins.
+Preloading 2 native plugins for Editor in 0.18 ms.
+System.NullReferenceException: Object reference not set to an instance of an object
+  at Vuforia.EditorClasses.ExtensionTypeProvider.GetVuforiaPackageAbsPath () [0x0004a] in <67f168408fbf4fce9c04342c093e9fe7>:0 
+  at Vuforia.EditorClasses.ExtensionTypeProvider.IsPackageManager () [0x00000] in <67f168408fbf4fce9c04342c093e9fe7>:0 
+  at Vuforia.EditorClasses.ExtensionTypeProvider.ResolvePluginType () [0x00009] in <67f168408fbf4fce9c04342c093e9fe7>:0 
+  at Vuforia.EditorClasses.ExtensionTypeProvider.GetPluginType () [0x0000c] in <67f168408fbf4fce9c04342c093e9fe7>:0 
+  at Vuforia.EditorClasses.VuforiaUtilities.IsVuforiaEnabledInPlayerSettings () [0x00000] in <67f168408fbf4fce9c04342c093e9fe7>:0 
+  at VuforiaEnabledObserver..cctor () [0x00000] in <67f168408fbf4fce9c04342c093e9fe7>:0 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+System.NullReferenceException: Object reference not set to an instance of an object
+  at Vuforia.EditorClasses.ExtensionTypeProvider.GetVuforiaPackageAbsPath () [0x0004a] in <67f168408fbf4fce9c04342c093e9fe7>:0 
+  at Vuforia.EditorClasses.ExtensionTypeProvider.IsPackageManager () [0x00000] in <67f168408fbf4fce9c04342c093e9fe7>:0 
+  at Vuforia.EditorClasses.ExtensionTypeProvider.ResolvePluginType () [0x00009] in <67f168408fbf4fce9c04342c093e9fe7>:0 
+  at Vuforia.EditorClasses.ExtensionTypeProvider.GetPluginType () [0x0000c] in <67f168408fbf4fce9c04342c093e9fe7>:0 
+  at Vuforia.EditorClasses.VuforiaUtilities.IsVuforiaEnabledInPlayerSettings () [0x00000] in <67f168408fbf4fce9c04342c093e9fe7>:0 
+  at Vuforia.EditorClasses.InitializeOnLoadVuforiaTaskRunner..cctor () [0x00015] in <67f168408fbf4fce9c04342c093e9fe7>:0 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+Mono: successfully reloaded assembly
+- Completed reload, in  2.186 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 1.12 ms, found 3 plugins.
+Preloading 2 native plugins for Editor in 0.19 ms.
+Unloading 2530 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 139.2 MB.
+System memory in use after: 136.8 MB.
+
+Unloading 130 unused Assets to reduce memory usage. Loaded Objects now: 3326.
+Total: 7.829000 ms (FindLiveObjects: 0.461400 ms CreateObjectMapping: 0.301700 ms MarkObjects: 5.511000 ms  DeleteObjects: 1.552600 ms)
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file

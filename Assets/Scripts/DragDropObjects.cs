@@ -4,6 +4,7 @@ using System;
 using UnityEngine.UI;
 using TMPro;
 using System.Collections.Generic;
+using UnityEngine.EventSystems;
 
 public class DragDropObjects : MonoBehaviour
 {
@@ -17,11 +18,19 @@ public class DragDropObjects : MonoBehaviour
 
     public Transform GaugePanel, TurbineController;
     private int currentPrefabIndex = -1;
-    public static float RPM, WindPower;
+    public static float RPM, WindPower, Temperature;
     public static string Name;
     private float BladeLen, WakeLoss, TimeOut, MechLoss, ElecLoss, Cp, mouseWheelRotation;
     public Toggle toggle;
     private bool flag = false;
+    public TurbineSetting TurbineScript;
+    public CSVReader CSVReader;
+    //public static bool tempFlag = false;
+
+    float lastClick = 0f;
+    float interval = 0.4f;
+    private string plotValue;
+
 
     // Start is called before the first frame update
     void Start()
@@ -54,6 +63,7 @@ public class DragDropObjects : MonoBehaviour
     {
         RPM = rayHitObj.GetComponent<TurbineSetting>().RPM;
         WindPower = rayHitObj.GetComponent<TurbineSetting>().WindOutPut;
+        Temperature = rayHitObj.GetComponent<TurbineSetting>().csvTemp;
         if (flag)
         {
             rayHitObj.GetComponent<TurbineSetting>().BladeLength = SliderBL.value;
@@ -171,7 +181,7 @@ public class DragDropObjects : MonoBehaviour
 
                 currentPlaceableObject = Instantiate(placeableObjectPrefabs[0]);
                 //currentPlaceableObject.GetComponent<Collider>().enabled = true;
-                currentPlaceableObject.tag = "Clone";
+                currentPlaceableObject.tag = "TurbineClone";
                 //currentPlaceableObject.layer = 8;
                 currentPlaceableObject.name = "WindTurbine" + "_" + DTtoGameObjectName(DateTime.Now);
                 currentPlaceableObject.transform.parent = GameObject.Find("WindFarm").transform;
@@ -194,37 +204,62 @@ public class DragDropObjects : MonoBehaviour
             {
                 Destroy(currentPlaceableObject);
             }
-
             currentPlaceableObject = Instantiate(placeableObjectPrefabs[1]);
-            currentPlaceableObject.tag = "Clone";
+            currentPlaceableObject.tag = "OilRigClone";
             currentPlaceableObject.name = "OilRig" + "_" + DTtoGameObjectName(DateTime.Now);
             currentPlaceableObject.transform.parent = GameObject.Find("OilRigSite").transform;
         }
     }
 
+    
 
-    private void gaugeActive()
-    {
+     private void gaugeActive()
+     {
         var LayerMask = 1 << 8;
         if (Input.GetMouseButton(0))
         {
+            
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hitInfo;
             if (Physics.Raycast(ray, out hitInfo,Mathf.Infinity, LayerMask)) 
             {
-                GaugePanel.gameObject.SetActive(false);
+                //GaugePanel.gameObject.SetActive(false);
                 rayHitObj = hitInfo.transform.parent.gameObject;
                 Name = rayHitObj.name;
+                PyscriptAllocation(Name);
                 GaugePanel.gameObject.SetActive(true);
             }
         }
         if (Input.GetMouseButton(1))
         {
-
-            TurbineController.gameObject.SetActive(false);
+          
+            if (toggle.isOn)
+            {
+                toggle.isOn = !toggle.isOn;
+                flag = false;
+            };
             GaugePanel.gameObject.SetActive(false);
 
         }
+     }
+    public void PyscriptAllocation(string name)
+    {
+        if (name == "WindTurbine (1)") { plotValue = "plotValue1.bat"; }
+        if (name == "WindTurbine (2)") { plotValue = "plotValue2.bat"; }
+        if (name == "WindTurbine (3)") { plotValue = "plotValue3.bat"; }
+        if (name == "WindTurbine (4)") { plotValue = "plotValue4.bat"; }
+        if (name == "WindTurbine (5)") { plotValue = "plotValue5.bat"; }
+        if (name == "WindTurbine (6)") { plotValue = "plotValue6.bat"; }
+        if (name == "WindTurbine (7)") { plotValue = "plotValue7.bat"; }
+        if (name == "WindTurbine (8)") { plotValue = "plotValue8.bat"; }
+        if (name == "WindTurbine (9)") { plotValue = "plotValue9.bat"; }
+        if (name == "WindTurbine (10)") {plotValue = "plotValue10.bat";}
+        if (name == "WindTurbine (11)") {plotValue = "plotValue11.bat"; }
+
+    }
+    public void Forcasting()
+    {
+        System.Diagnostics.Process.Start(Application.dataPath + "/CSV/Plot/BatchFile/" + plotValue);
     }
 
     private void WindControllActivate()
@@ -232,8 +267,10 @@ public class DragDropObjects : MonoBehaviour
 
         if (toggle.isOn)
         {
+            
             TurbineController.gameObject.SetActive(true);
             flag = true;
+            
         }
         else
         {

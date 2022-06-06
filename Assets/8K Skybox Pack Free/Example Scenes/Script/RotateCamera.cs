@@ -53,10 +53,10 @@ public class RotateCamera : MonoBehaviour
 
         }
 
-        if (Input.GetKey(KeyCode.LeftAlt))
-        {
+        //if (Input.GetKey(KeyCode.LeftControl))
+        //{
             //Look around with Left Mouse
-            if (Input.GetMouseButton(0))
+            if (Input.GetMouseButton(1))
             {
                 this.yaw += this.lookSpeedH * Input.GetAxis("Mouse X");
                 this.pitch -= this.lookSpeedV * Input.GetAxis("Mouse Y");
@@ -71,7 +71,7 @@ public class RotateCamera : MonoBehaviour
             }
 
             this.transform.Translate(0, 0, Input.GetAxis("Mouse ScrollWheel") * this.zoomSpeed, Space.Self);
-        }
+        //}
         
     }
 }

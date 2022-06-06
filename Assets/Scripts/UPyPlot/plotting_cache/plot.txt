@@ -1,0 +1,6 @@
+4,0.34
+Blade 22\UPyPlotExampleSender\xVar,Blade 22\UPyPlotExampleSender\zVar,Blade 22\UPyPlotExampleSender\yVar
+0.00,0.00,0.00
+7.56,-31.62,7.25
+8.14,-31.81,7.24
+8.43,-31.94,7.20

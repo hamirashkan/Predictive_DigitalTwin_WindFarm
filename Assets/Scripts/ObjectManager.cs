@@ -12,26 +12,26 @@ public class ObjectManager : MonoBehaviour
     {
         default_pos = GameObject.Find("Main Camera").transform.position;
         default_rot = GameObject.Find("Main Camera").transform.eulerAngles;
-        editModePos = new Vector3(0, 120, 0);
+        editModePos = new Vector3(-25.5032902f, 160, -26.4962082f);
         editModeRot = new Vector3(90, 0, 0);
     }
     void FixedUpdate()
     {
-        if (Input.GetKeyDown(KeyCode.LeftShift))
-        {
-            Debug.Log("Shift Pressed");
-            shiftOn = false;
-            GameObject.Find("Main Camera").transform.position = editModePos;
-            GameObject.Find("Main Camera").transform.eulerAngles = editModeRot;
-        }
+        //if (Input.GetKeyDown(KeyCode.LeftShift))
+        //{
+        //    Debug.Log("Shift Pressed");
+        //    shiftOn = false;
+        //    GameObject.Find("Main Camera").transform.position = editModePos;
+        //    GameObject.Find("Main Camera").transform.eulerAngles = editModeRot;
+        //}
 
-        if (Input.GetKeyUp(KeyCode.LeftShift))
-        {
-            Debug.Log("Shift Released");
-            shiftOn = true;
-            GameObject.Find("Main Camera").transform.position = default_pos;
-            GameObject.Find("Main Camera").transform.eulerAngles = default_rot;
-        }
+        //if (Input.GetKeyUp(KeyCode.LeftShift))
+        //{
+        //    Debug.Log("Shift Released");
+        //    shiftOn = true;
+        //    GameObject.Find("Main Camera").transform.position = default_pos;
+        //    GameObject.Find("Main Camera").transform.eulerAngles = default_rot;
+        //}
     }
 
     private void OnMouseDown()
